@@ -1,15 +1,16 @@
+import 'package:edus/src/provider/auth_repository.dart';
 import 'package:edus/src/utils/constantes.dart';
 import 'package:flutter/material.dart';
-import 'package:routemaster/routemaster.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignUp extends StatefulWidget {
+class SignUp extends ConsumerStatefulWidget {
   const SignUp({Key? key}) : super(key: key);
 
   @override
-  State<SignUp> createState() => _SignUpState();
+  ConsumerState<SignUp> createState() => _SignUpState();
 }
 
-class _SignUpState extends State<SignUp> {
+class _SignUpState extends ConsumerState<SignUp> {
 
   TextEditingController emailController = TextEditingController();
   TextEditingController nameController = TextEditingController();
@@ -86,7 +87,7 @@ class _SignUpState extends State<SignUp> {
             ),
             padding: const EdgeInsets.symmetric(vertical: 15)),
         onPressed: () {
-          Routemaster.of(context).push('/signupConf');
+          ref.watch(regRepositoryProvider).register('asd', 'asd');
         },
         child: const Text(
           'SIGN UP',
