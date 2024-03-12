@@ -1,8 +1,3 @@
-// To parse this JSON data, do
-//
-//     final userModel = userModelFromMap(jsonString);
-
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 UserModel userModelFromMap(String str) => UserModel.fromMap(json.decode(str));
@@ -10,72 +5,48 @@ UserModel userModelFromMap(String str) => UserModel.fromMap(json.decode(str));
 String userModelToMap(UserModel data) => json.encode(data.toMap());
 
 class UserModel {
-  String id;
-  String nombreUsuario;
+  String username;
   String email;
   String password;
-  String ultimoCambioPassword;
-  String verificationEmail;
-  String tokenSesion;
-  String creacionTokenSesion;
-  String ultimoInicioToken;
+  String img;
+  String token;
 
   UserModel({
-    required this.id,
-    required this.nombreUsuario,
+    required this.username,
     required this.email,
     required this.password,
-    required this.ultimoCambioPassword,
-    required this.verificationEmail,
-    required this.tokenSesion,
-    required this.creacionTokenSesion,
-    required this.ultimoInicioToken,
+    required this.img,
+    required this.token,
   });
 
   UserModel copyWith({
-    String? id,
-    String? nombreUsuario,
+    String? username,
     String? email,
     String? password,
-    String? ultimoCambioPassword,
-    String? verificationEmail,
-    String? tokenSesion,
-    String? creacionTokenSesion,
-    String? ultimoInicioToken,
+    String? img,
+    String? token,
   }) =>
       UserModel(
-        id: id ?? this.id,
-        nombreUsuario: nombreUsuario ?? this.nombreUsuario,
+        username: username ?? this.username,
         email: email ?? this.email,
         password: password ?? this.password,
-        ultimoCambioPassword: ultimoCambioPassword ?? this.ultimoCambioPassword,
-        verificationEmail: verificationEmail ?? this.verificationEmail,
-        tokenSesion: tokenSesion ?? this.tokenSesion,
-        creacionTokenSesion: creacionTokenSesion ?? this.creacionTokenSesion,
-        ultimoInicioToken: ultimoInicioToken ?? this.ultimoInicioToken,
+        img: img ?? this.img,
+        token: token ?? this.token,
       );
 
   factory UserModel.fromMap(Map<String, dynamic> json) => UserModel(
-    id: json["id"],
-    nombreUsuario: json["nombre_usuario"],
-    email: json["email"],
+    username: json["username"],
+    email: json["email"] ,
     password: json["password"],
-    ultimoCambioPassword: json["ultimo_cambio_password"],
-    verificationEmail: json["verification_email"],
-    tokenSesion: json["token_sesion"],
-    creacionTokenSesion: json["creacion_token_sesion"],
-    ultimoInicioToken: json["ultimo_inicio_token"],
+    img: json["img"] ?? '',
+    token: json["token"] ?? '',
   );
 
   Map<String, dynamic> toMap() => {
-    "id": id,
-    "nombre_usuario": nombreUsuario,
+    "username": username,
     "email": email,
     "password": password,
-    "ultimo_cambio_password": ultimoCambioPassword,
-    "verification_email": verificationEmail,
-    "token_sesion": tokenSesion,
-    "creacion_token_sesion": creacionTokenSesion,
-    "ultimo_inicio_token": ultimoInicioToken,
+    "img": img,
+    "token": token,
   };
 }

@@ -22,14 +22,14 @@ class _SignUpConfirmationState extends State<SignUpConfirmation> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 50,),
+                const SizedBox(height: 50,),
                 Text('CREAR CUENTA',
                   style: TextStyle(color: titleColor,fontSize: 36),),
-                SizedBox(height: 10,),
-                Text('La cuenta email @email ha sido enviado el\ncodigo de confirmacion de la cuenta'),
-                SizedBox(height: 150,),
+                const SizedBox(height: 10,),
+                const Text('La cuenta email @email ha sido enviado el\ncodigo de confirmacion de la cuenta'),
+                const SizedBox(height: 150,),
                 _textField(confirmationController,'Introduce el codigo', TextInputType.none,false),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 _buttonNext(),
                 Container(
                   width: double.infinity,
@@ -37,8 +37,8 @@ class _SignUpConfirmationState extends State<SignUpConfirmation> {
                   padding: const EdgeInsets.only(left: 100),
                   child: Row(
                     children: [
-                      Text('00:25'),
-                      SizedBox(width: 10,),
+                      const Text('00:25'),
+                      const SizedBox(width: 10,),
                       Text('Volver a enviar codigo',
                         style: TextStyle(color: textRefLInk),
                       )

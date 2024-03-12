@@ -27,26 +27,26 @@ class _SignUpState extends ConsumerState<SignUp> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 50,),
+                const SizedBox(height: 50,),
                 Text('CREAR CUENTA',
                   style: TextStyle(color: titleColor,fontSize: 36),),
-                SizedBox(height: 10,),
-                Text('Ingresa tu nombre completo, email, y contrasena \npara registrarte.'),
-                SizedBox(height: 50,),
+                const SizedBox(height: 10,),
+                const Text('Ingresa tu nombre completo, email, y contrasena \npara registrarte.'),
+                const SizedBox(height: 50,),
                 _textField(nameController,'Full name', TextInputType.name, false),
                 _textField(emailController,'Email Address', TextInputType.emailAddress, false),
                 _textField(passwordController,'Password', TextInputType.visiblePassword,true),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 _buttonNext(),
-                SizedBox(height: 20,),
-                Text('Al registrarte aceptas todo nuestros\nterminos de condicion y politicas.'),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
+                const Text('Al registrarte aceptas todo nuestros\nterminos de condicion y politicas.'),
+                const SizedBox(height: 20,),
                 GestureDetector(
                   onTap: (){
 
                   },
                   child: Text('ya tienes cuenta?',
-                  style: TextStyle(color: textRefLInk),),)
+                    style: TextStyle(color: textRefLInk),),)
               ],
             ),
           ),
@@ -87,7 +87,7 @@ class _SignUpState extends ConsumerState<SignUp> {
             ),
             padding: const EdgeInsets.symmetric(vertical: 15)),
         onPressed: () {
-          ref.watch(regRepositoryProvider).register('asd', 'asd');
+          ref.watch(authRepositoryProvider).register('asd', 'asd');
         },
         child: const Text(
           'SIGN UP',
