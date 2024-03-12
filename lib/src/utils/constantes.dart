@@ -17,10 +17,10 @@ const host = 'edus-backend.onrender.com';
 const endpoint = 'https://api.openai.com/v1/';
 
 /// API key
-const aiToken = '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';
+const aiToken = '';
 
-const openAiApiKey = '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';
-const openAiOrg = 'org-uBgVOpX6LXmm9mCK5uTPUCIv';
+const openAiApiKey = '';
+const openAiOrg = '';
 /// Email for Gravatar image
 const emailAddress = '[insert email for gravatar]';
 
